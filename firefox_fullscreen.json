@@ -1,21 +1,20 @@
 {
-    "title": "Chrome Full Screen",
+    "title": "Firefox Full Screen",
     "conditions": [
         {
             "type": "frontmost_application_if",
             "bundle_identifiers": [
-                "^com\\.google\\.Chrome"
+                "^org\\.mozilla\\.firefox"
             ]
         }
     ],
     "rules": [
         {
-            "description": "Chrome Command Control F to Fullscreen",
+            "description": "Firefox Command Control F to Fullscreen",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-
                         "key_code": "f",
                         "modifiers": {
                             "mandatory": ["left_control", "left_command"]
@@ -24,7 +23,9 @@
                     "to": [
                         {
                             "key_code": "f",
-                            "modifiers": ["fn"]
+                            "modifiers": {
+                                "mandatory": ["left_shift", "left_command"]
+                            }
                         }
                     ]
                 }
